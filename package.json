@@ -9,6 +9,16 @@
   "author": "Andrey \"Woenzu\" Lvov",
   "license": "MIT",
   "dependencies": {
+    "jquery": "^3.1.0",
     "tbox": "^0.1.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WoenZu/trollbox.git"
+  },
+  "bugs": {
+    "url": "https://github.com/WoenZu/trollbox/issues"
+  },
+  "homepage": "https://github.com/WoenZu/trollbox#readme"
 }
