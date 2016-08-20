@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "description": "chat application",
   "main": "index.html",
+  "window": {
+      "width": 800,
+      "height": 500
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -16,7 +16,7 @@ html, body {
   display: none;
 }
 
-.log {
+.mainLog {
   /*border: 1px solid;*/
   background: white;
   height: 400px;
