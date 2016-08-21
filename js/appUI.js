@@ -1,47 +1,46 @@
 'use strict';
 
-function AppUI() {
-  console.log('appUI init...');
-  var inputLine = $('.inputLine');
+var AppUI = {};
 
-  this.test = function() {
+  AppUI.inputLine = $('.inputLine');
+  AppUI.mainLog = $('.mainLog');
+
+  AppUI.test = function() {
     console.log('appUI test');
   };
 
-  this.init = function() {
-    console.log('event listeners init...');
-    //event listeners
+  AppUI.init = function() {
     $('.inputLine').on('keyup', function(event) {
       event.preventDefault();
       if (event.which === 13) {
-        var string = this.getInputContent();
+        var string = AppUI.getInputContent();
         if (string !== '') {
-           note('keyup listener', 'WARNING!');//посылаем строку
+           AppUI.note('keyup listener', 'WARNING!');//посылаем строку
         }
       }
     });
 
     $('body').on('click', function() {
-      console.log(AppUI.init);
-      //this.setFocus(inputLine);
+      AppUI.setFocus(AppUI.inputLine);
     });
+
+    AppUI.setFocus(AppUI.inputLine);
   };
 
-  this.getInputContent = function() {
-    var msg = $(inputLine).val();
-    $(inputLine).val('');
-    console.log(string);
+  AppUI.getInputContent = function() {
+    var string = $(AppUI.inputLine).val();
+    $(AppUI.inputLine).val('');
     return string;
   };
 
-  this.setFocus = function(element) {
-    $(element).fucus();
+  AppUI.setFocus = function(element) {
+    $(element).focus();
   };
 
-  this.note = function(text, type) {
+  AppUI.note = function(text, type) {
+    console.log('note func');
     var msg = $('<div>');
     msg.addClass('msg');
     msg.text(type + ' ' + text);
-    $('.mainLog').append(msg);
+    AppUI.mainLog.append(msg);
   };
-}
